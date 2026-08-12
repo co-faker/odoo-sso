@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu: SSO - 仅系统管理员可见 -->
+    <menuitem id="menu_sso_root"
+              name="SSO"
+              sequence="100"
+              groups="base.group_system"
+              web_icon="sso,static/description/icon.png"/>
+
+    <menuitem id="menu_sso_application"
+              name="SSO Applications"
+              parent="menu_sso_root"
+              action="action_sso_application"
+              sequence="10"/>
+
+    <menuitem id="menu_sso_auth_code"
+              name="Authorization Codes"
+              parent="menu_sso_root"
+              action="action_sso_auth_code"
+              sequence="20"/>
+
+    <menuitem id="menu_sso_access_token"
+              name="Access Tokens"
+              parent="menu_sso_root"
+              action="action_sso_access_token"
+              sequence="30"/>
+
+    <menuitem id="menu_sso_user_consent"
+              name="User Consents"
+              parent="menu_sso_root"
+              action="action_sso_user_consent"
+              sequence="40"/>
+
+    <menuitem id="menu_sso_log"
+              name="SSO Logs"
+              parent="menu_sso_root"
+              action="action_sso_log"
+              sequence="50"/>
+
+    <menuitem id="menu_sso_jwk"
+              name="OIDC Keys"
+              parent="menu_sso_root"
+              action="action_sso_jwk"
+              sequence="60"/>
+</odoo>

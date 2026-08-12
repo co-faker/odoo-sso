@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="oauth_authorize_template" name="OAuth2 Authorization">
+        <t t-call="web.login_layout">
+            <div class="o_oauth_authorize">
+                <div class="card o_dialog_container">
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <h3 class="mb-2">Authorization Request</h3>
+                            <p class="text-muted d-flex align-items-center flex-wrap">
+                                <t t-esc="application.name"/>
+                                <div class="d-inline"> wants to access your account</div>
+                            </p>
+                        </div>
+
+                        <div class="mb-4 p-3 bg-100 rounded">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fa fa-user-circle-o fa-2x text-primary me-2"/>
+                                <div>
+                                    <strong t-esc="user.partner_id.name"/>
+                                    <br/>
+                                    <span class="text-muted" t-esc="user.login"/>
+                                </div>
+                            </div>
+                            <hr/>
+                            <p class="mb-1 d-flex align-items-center">
+                                <i class="fa fa-check-circle-o text-success me-1" t-translation="off"/>
+                                <div class="d-inline">This application will be able to:</div>
+                            </p>
+                            <ul class="list-unstyled ms-3 mb-0">
+                                <li class="d-flex align-items-center"><i class="fa fa-angle-right text-muted me-1" t-translation="off"/><div class="d-inline">View your basic profile information</div></li>
+                                <li class="d-flex align-items-center"><i class="fa fa-angle-right text-muted me-1" t-translation="off"/><div class="d-inline">Verify your identity</div></li>
+                            </ul>
+                        </div>
+
+                        <form method="POST" action="/sso/oauth2/authorize">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="client_id" t-att-value="client_id"/>
+                            <input type="hidden" name="redirect_uri" t-att-value="redirect_uri"/>
+                            <input type="hidden" name="state" t-att-value="state"/>
+                            <input type="hidden" name="scope" t-att-value="scope"/>
+                            <input type="hidden" name="nonce" t-att-value="nonce"/>
+
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" name="action" value="deny"
+                                        class="btn btn-secondary btn-lg">
+                                    Deny
+                                </button>
+                                <button type="submit" name="action" value="confirm"
+                                        class="btn btn-primary btn-lg">
+                                    Authorize
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="oauth_error_template" name="OAuth2 Error">
+        <t t-call="web.login_layout">
+            <div class="o_oauth_error">
+                <div class="card o_dialog_container">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <i class="fa fa-exclamation-triangle fa-4x text-danger"/>
+                        </div>
+                        <h3 class="mb-3">Authorization Error</h3>
+                        <p class="text-muted" t-esc="error_message"/>
+                        <div class="mt-4">
+                            <a href="/web" class="btn btn-primary">
+                                <i class="fa fa-arrow-left me-1"/>Back to Odoo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

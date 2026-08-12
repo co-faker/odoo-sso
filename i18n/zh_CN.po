@@ -1,0 +1,59 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sso
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-30 18:46+0000\n"
+"PO-Revision-Date: 2025-12-06 10:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.14.3\n"
+
+#. module: sso
+#: model_terms:ir.ui.view,arch_db:sso.oauth_authorize_template
+msgid "Authorization Request"
+msgstr "授权请求"
+
+#. module: sso
+#: model_terms:ir.ui.view,arch_db:sso.oauth_authorize_template
+msgid "wants to access your account"
+msgstr "想要访问你的账户"
+
+#. module: sso
+#: model_terms:ir.ui.view,arch_db:sso.oauth_authorize_template
+msgid "This application will be able to:"
+msgstr "该应用将能够："
+
+#. module: sso
+#: model_terms:ir.ui.view,arch_db:sso.oauth_authorize_template
+msgid "View your basic profile information"
+msgstr "查看你的基本个人资料信息"
+
+#. module: sso
+#: model_terms:ir.ui.view,arch_db:sso.oauth_authorize_template
+msgid "Verify your identity"
+msgstr "验证你的身份"
+
+#. module: sso
+#: model_terms:ir.ui.view,arch_db:sso.oauth_authorize_template
+msgid "Deny"
+msgstr "拒绝"
+
+#. module: sso
+#: model_terms:ir.ui.view,arch_db:sso.oauth_authorize_template
+msgid "Authorize"
+msgstr "授权"
+
+#. module: sso
+#: model_terms:ir.ui.view,arch_db:sso.oauth_authorize_template
+msgid "Authorization Error"
+msgstr "授权错误"
+
+#. module: sso
+#: model_terms:ir.ui.view,arch_db:sso.oauth_authorize_template
+msgid "Back to Odoo"
+msgstr "返回 Odoo"

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sso_application_admin,sso.application.admin,model_sso_application,base.group_system,1,1,1,1
+access_sso_redirect_uri_admin,sso.redirect.uri.admin,model_sso_redirect_uri,base.group_system,1,1,1,1
+access_sso_auth_code_admin,sso.auth.code.admin,model_sso_auth_code,base.group_system,1,1,1,1
+access_sso_access_token_admin,sso.access.token.admin,model_sso_access_token,base.group_system,1,1,1,1
+access_sso_user_consent_admin,sso.user.consent.admin,model_sso_user_consent,base.group_system,1,1,1,1
+access_sso_log_admin,sso.log.admin,model_sso_log,base.group_system,1,1,1,1
+access_sso_jwk_admin,sso.jwk.admin,model_sso_jwk,base.group_system,1,1,1,1
+access_sso_auth_code_user,sso.auth.code.user,model_sso_auth_code,base.group_user,0,0,1,0
+access_sso_user_consent_user,sso.user.consent.user,model_sso_user_consent,base.group_user,1,1,1,0
+access_sso_log_user,sso.log.user,model_sso_log,base.group_user,0,0,1,0

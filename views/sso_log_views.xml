@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Log List View -->
+    <record id="view_sso_log_list" model="ir.ui.view">
+        <field name="name">sso.log.list</field>
+        <field name="model">sso.log</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0" delete="0">
+                <field name="create_date"/>
+                <field name="user_id"/>
+                <field name="application_id"/>
+                <field name="action"/>
+                <field name="ip"/>
+                <field name="success" widget="boolean_toggle"/>
+                <field name="error_message"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Log Search View -->
+    <record id="view_sso_log_search" model="ir.ui.view">
+        <field name="name">sso.log.search</field>
+        <field name="model">sso.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="user_id"/>
+                <field name="application_id"/>
+                <field name="ip"/>
+                <filter name="success" string="Success" domain="[('success', '=', True)]"/>
+                <filter name="failed" string="Failed" domain="[('success', '=', False)]"/>
+                <separator/>
+                <filter name="action_authorize" string="Authorize" domain="[('action', '=', 'authorize')]"/>
+                <filter name="action_token" string="Token Refresh" domain="[('action', '=', 'token_refresh')]"/>
+                <filter name="action_userinfo" string="User Info" domain="[('action', '=', 'userinfo')]"/>
+                <filter name="action_logout" string="Logout" domain="[('action', '=', 'logout')]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Log Action -->
+    <record id="action_sso_log" model="ir.actions.act_window">
+        <field name="name">SSO Logs</field>
+        <field name="res_model">sso.log</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="view_sso_log_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No SSO logs yet
+            </p>
+            <p>
+                All SSO authentication activities are logged here for audit purposes.
+            </p>
+        </field>
+    </record>
+</odoo>

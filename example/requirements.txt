@@ -1,0 +1,7 @@
+# 该示例是独立的 Flask 客户端，与 Odoo 主环境共用同一个 .venv。
+# Odoo 19 将 Werkzeug 固定为 3.0.1，而 Flask >= 3.1 会在 set_cookie 中传入
+# partitioned 参数（Werkzeug 3.0.3 才支持），导致
+# "Response.set_cookie() got an unexpected keyword argument 'partitioned'" 报错。
+# 因此这里显式固定 Flask 3.0.3，避免与主环境 Werkzeug 版本冲突。
+flask==3.0.3
+requests>=2.25.0
